@@ -36,7 +36,7 @@ jobs:
         platforms: linux/amd64,/linux/arm64
         push: true
         tags: |
-          user/sp-bookstore:latest
+          ${{ secrets.DOCKER_USER }}/sp-bookstore:latest
           
         
       
