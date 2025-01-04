@@ -4,5 +4,5 @@ COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package
 
 FROM openjdk:17-jdk-alpine
-COPY --from=build /home/app/target/*.jar sp-bookstore-0.0.1-SNAPSHOT.jar
+COPY --from=builder /home/app/target/*.jar sp-bookstore-0.0.1-SNAPSHOT.jar
 ENTRYPOINT ["java","-jar","/sp-bookstore-0.0.1-SNAPSHOT.jar"]
